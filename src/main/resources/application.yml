@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://mysql-container:3306/dev?useSSL=false&serverTimezone=Asia/Seoul&allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: 1234
+
+  jpa:
+    hibernate:
+      ddl-auto: validate
+
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
