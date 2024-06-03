@@ -66,6 +66,7 @@ public class PostEntity {
     public Post toModel(){
         return Post.builder()
                 .writer(writer.toModel())
+                .imagePath(imagePath)
                 .title(title)
                 .outline(outline)
                 .outcome(outcome)
