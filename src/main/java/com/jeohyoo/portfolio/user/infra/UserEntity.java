@@ -1,6 +1,5 @@
 package com.jeohyoo.portfolio.user.infra;
 
-import com.jeohyoo.portfolio.common.domain.port.ClockHolder;
 import com.jeohyoo.portfolio.user.domain.User;
 import jakarta.persistence.*;
 import lombok.Setter;
