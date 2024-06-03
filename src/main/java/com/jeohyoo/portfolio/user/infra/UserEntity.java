@@ -10,7 +10,7 @@ import lombok.Setter;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long userId;
 
     @Column(columnDefinition = "varchar(50)")
     private String email;
@@ -29,12 +29,12 @@ public class UserEntity {
         return userEntity;
     }
 
-    public static User toModel(UserEntity userEntity){
+    public User toModel(){
         return User.builder()
-                .userId(userEntity.id)
-                .email(userEntity.email)
-                .nickname(userEntity.nickname)
-                .createdTime(userEntity.createdTime)
+                .userId(userId)
+                .email(email)
+                .nickname(nickname)
+                .createdTime(createdTime)
                 .build();
     }
 
