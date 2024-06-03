@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  myapp:
+    build: .
+    ports:
+      - "8080:8080"
+    volumes:
+      - my_shared_volume:/path/in/container
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:mysql://mysql:3306/mydb
+      - SPRING_DATASOURCE_USERNAME=root
+      - SPRING_DATASOURCE_PASSWORD=example
+    networks:
+      - my_network
+
+  mysql:
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: example
+      MYSQL_DATABASE: mydb
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - my_network
+
+volumes:
+  my_shared_volume:
+  mysql_data:
+
+networks:
+  my_network:
