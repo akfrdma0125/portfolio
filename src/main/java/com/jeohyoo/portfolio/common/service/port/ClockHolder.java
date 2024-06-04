@@ -1,4 +1,4 @@
-package com.jeohyoo.portfolio.common.domain.port;
+package com.jeohyoo.portfolio.common.service.port;
 
 public interface ClockHolder {
     long millis();

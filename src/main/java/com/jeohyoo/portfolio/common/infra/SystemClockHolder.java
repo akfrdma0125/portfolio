@@ -1,6 +1,6 @@
 package com.jeohyoo.portfolio.common.infra;
 
-import com.jeohyoo.portfolio.common.domain.port.ClockHolder;
+import com.jeohyoo.portfolio.common.service.port.ClockHolder;
 import jakarta.annotation.PostConstruct;
 import org.springframework.stereotype.Component;
 
