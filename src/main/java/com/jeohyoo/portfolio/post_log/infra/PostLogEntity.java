@@ -11,13 +11,14 @@ import lombok.Setter;
 public class PostLogEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "post_log_id")
     private Long postLogId;
 
     @ManyToOne
     @JoinColumn(name = "post_id")
     private PostEntity post;
 
-    @Column
+    @Column(name = "modified_date")
     private Long modifiedDate;
 
     public static PostLogEntity from(PostLog postLog){

@@ -11,13 +11,14 @@ import lombok.Setter;
 public class PostEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "post_id")
     private Long postId;
 
     @ManyToOne
     @JoinColumn(name = "user_id")
     private UserEntity writer;
 
-    @Column(columnDefinition = "varchar(255)")
+    @Column(name = "image_path", columnDefinition = "varchar(255)")
     private String imagePath;
 
     @Column(columnDefinition = "varchar(50)")
@@ -29,22 +30,22 @@ public class PostEntity {
     @Column(columnDefinition = "varchar(255)")
     private String outcome;
 
-    @Column(columnDefinition = "varchar(255)")
+    @Column(name = "code_url", columnDefinition = "varchar(255)")
     private String codeUrl;
 
     @Column(columnDefinition = "varchar(50)")
     private String role;
 
-    @Column
+    @Column(name = "started_date")
     private Long startedDate;
 
-    @Column
+    @Column(name = "ended_date")
     private Long endedDate;
 
     @Column(columnDefinition = "text")
     private String content;
 
-    @Column
+    @Column(name = "created_date")
     private Long createdDate;
 
     public static PostEntity from(Post post){

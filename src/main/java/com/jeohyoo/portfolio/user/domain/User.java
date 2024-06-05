@@ -9,5 +9,5 @@ public class User {
     private Long userId;
     private String email;
     private String nickname;
-    private Long createdTime;
+    private Long createdDate;
 }

@@ -12,6 +12,7 @@ import lombok.Setter;
 public class CommentEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "comment_id")
     private Long commentId;
 
     @ManyToOne
@@ -25,7 +26,7 @@ public class CommentEntity {
     @Column(columnDefinition = "varchar(255)")
     private String content;
 
-    @Column
+    @Column(name = "created_date")
     private Long createdDate;
 
     public static CommentEntity from(Comment comment){

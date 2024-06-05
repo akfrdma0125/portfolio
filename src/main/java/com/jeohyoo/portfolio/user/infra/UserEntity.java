@@ -9,6 +9,7 @@ import lombok.Setter;
 public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "user_id")
     private Long userId;
 
     @Column(columnDefinition = "varchar(50)")
@@ -17,14 +18,14 @@ public class UserEntity {
     @Column(columnDefinition = "varchar(20)")
     private String nickname;
 
-    @Column
-    private Long createdTime;
+    @Column(name = "created_date")
+    private Long createdDate;
 
     public static UserEntity from(User user) {
         UserEntity userEntity = new UserEntity();
         userEntity.setEmail(user.getEmail());
         userEntity.setNickname(user.getNickname());
-        userEntity.setCreatedTime(user.getCreatedTime());
+        userEntity.setCreatedDate(user.getCreatedDate());
         return userEntity;
     }
 
@@ -33,7 +34,7 @@ public class UserEntity {
                 .userId(userId)
                 .email(email)
                 .nickname(nickname)
-                .createdTime(createdTime)
+                .createdDate(createdDate)
                 .build();
     }
 
