@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 
 import static com.jeohyoo.portfolio.common.domain.BusinessCode.API_RESPONSE_ERROR;
 
-
 public class ApiResponseJsonProcessingException extends BusinessException {
 
     public ApiResponseJsonProcessingException(Throwable cause) {

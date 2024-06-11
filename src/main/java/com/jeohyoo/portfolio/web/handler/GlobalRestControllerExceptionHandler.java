@@ -45,7 +45,7 @@ public class GlobalRestControllerExceptionHandler {
     protected ApiResponse<Void> handle(Throwable throwable) {
         log.error("[InternalServerError]{}", throwable.getMessage(), throwable);
 
-        return ApiResponseGenerator.fail(INTERNAL_SERVER_ERROR.getCode(), INTERNAL_SERVER_ERROR.getDescription());
+        return ApiResponseGenerator.fail(INTERNAL_SERVER_ERROR.getCode(), INTERNAL_SERVER_ERROR.getMessage());
     }
 
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
@@ -58,20 +58,20 @@ public class GlobalRestControllerExceptionHandler {
 
         log.error("[InternalServerError][ConversionFailed] {}", exception.getMessage(), exception);
 
-        return ApiResponseGenerator.fail(INTERNAL_SERVER_ERROR.getCode(), INTERNAL_SERVER_ERROR.getDescription());
+        return ApiResponseGenerator.fail(INTERNAL_SERVER_ERROR.getCode(), INTERNAL_SERVER_ERROR.getMessage());
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
     @ExceptionHandler(NoResourceFoundException.class)
     protected ApiResponse<Void> handle() {
-        return ApiResponseGenerator.fail(INVALID_URL.getCode(), INVALID_URL.getDescription());
+        return ApiResponseGenerator.fail(INVALID_URL.getCode(), INVALID_URL.getMessage());
     }
 
     @ResponseStatus(HttpStatus.FORBIDDEN)
     @ExceptionHandler(AccessDeniedException.class)
     protected ApiResponse<Void> handle(AccessDeniedException exception) {
         log.info("[AccessDenied] {}", exception.getMessage());
-        return ApiResponseGenerator.fail(FORBIDDEN.getCode(), FORBIDDEN.getDescription());
+        return ApiResponseGenerator.fail(FORBIDDEN.getCode(), FORBIDDEN.getMessage());
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)
@@ -87,7 +87,7 @@ public class GlobalRestControllerExceptionHandler {
     protected ApiResponse<Void> handle(Exception exception) {
         log.info("[BadRequest] {}", exception.getMessage(), exception);
 
-        return ApiResponseGenerator.fail(BAD_REQUEST.getCode(), BAD_REQUEST.getDescription());
+        return ApiResponseGenerator.fail(BAD_REQUEST.getCode(), BAD_REQUEST.getMessage());
     }
 
     @ResponseStatus(HttpStatus.BAD_REQUEST)

@@ -21,16 +21,15 @@ public enum BusinessCode {
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "S500", "시스템 내부오류가 발생했습니다. 담당자에게 문의바랍니다."),
     API_RESPONSE_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "S599","API 응답처리중 오류가 발생했습니다."),
 
-
     ;
 
     private final HttpStatus httpStatus;
     private final String code;
-    private final String description;
+    private final String message;
 
-    BusinessCode(HttpStatus status, String code, String description) {
+    BusinessCode(HttpStatus status, String code, String message) {
         this.httpStatus = status;
         this.code = code;
-        this.description = description;
+        this.message = message;
     }
 }

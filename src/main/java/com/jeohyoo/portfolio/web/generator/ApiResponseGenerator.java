@@ -19,7 +19,7 @@ public class ApiResponseGenerator {
         return ApiResponse.<Void>builder()
                 .path(path)
                 .code(BusinessCode.SUCCESS.getCode())
-                .message(BusinessCode.SUCCESS.getDescription())
+                .message(BusinessCode.SUCCESS.getMessage())
                 .build();
     }
 
@@ -33,7 +33,7 @@ public class ApiResponseGenerator {
         return ApiResponse.<D>builder()
                 .path(path)
                 .code(BusinessCode.SUCCESS.getCode())
-                .message(BusinessCode.SUCCESS.getDescription())
+                .message(BusinessCode.SUCCESS.getMessage())
                 .data(data)
                 .build();
     }
@@ -47,7 +47,7 @@ public class ApiResponseGenerator {
         return ApiResponse.<Void>builder()
                 .path(path)
                 .code(BusinessCode.CREATED.getCode())
-                .message(BusinessCode.CREATED.getDescription())
+                .message(BusinessCode.CREATED.getMessage())
                 .build();
     }
 
@@ -60,7 +60,7 @@ public class ApiResponseGenerator {
         return ApiResponse.<Void>builder()
                 .path(path)
                 .code(BusinessCode.INTERNAL_SERVER_ERROR.getCode())
-                .message(BusinessCode.INTERNAL_SERVER_ERROR.getDescription())
+                .message(BusinessCode.INTERNAL_SERVER_ERROR.getMessage())
                 .build();
     }
 
@@ -74,7 +74,7 @@ public class ApiResponseGenerator {
         return ApiResponse.<D>builder()
                 .path(path)
                 .code(BusinessCode.INTERNAL_SERVER_ERROR.getCode())
-                .message(BusinessCode.INTERNAL_SERVER_ERROR.getDescription())
+                .message(BusinessCode.INTERNAL_SERVER_ERROR.getMessage())
                 .data(data)
                 .build();
     }
